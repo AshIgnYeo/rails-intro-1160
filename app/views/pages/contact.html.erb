@@ -1,0 +1,19 @@
+<h1>Contact us</h1>
+<ol>
+  <% @teachers.each do |teacher| %>
+    <li><%= teacher %></li>
+  <% end %>
+</ol>
+
+<hr>
+
+<form action="/contact" method="get">
+  <input type="text" name="teacher" placeholder="Who are you looking for?" value="<%= @search %>">
+  <input type="submit">
+</form>
+
+
+<% if @search %>
+  <h2>Results for: <%= @search %></h2>
+  <p>Some details here....</p>
+<% end %>
